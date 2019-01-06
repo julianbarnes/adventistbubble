@@ -1,0 +1,88 @@
+{
+	"projectPath": "/Users/julianbarnes/Documents/Projects/Bubble/client/bubble",
+	"backupAWSMobileJSDirPath": "/Users/julianbarnes/Documents/Projects/Bubble/client/bubble/~awsmobilejs-2019-01-02-21-55-07",
+	"projectInfo": {
+		"ProjectName": "bubble",
+		"ProjectPath": "/Users/julianbarnes/Documents/Projects/Bubble/client/bubble",
+		"InitializationTime": "",
+		"LastConfigurationTime": "",
+		"LastNPMInstallTime": "",
+		"FrontendLastBuildTime": "",
+		"LastPublishTime": "",
+		"BackendLastSyncTime": "",
+		"BackendLastBuildTime": "",
+		"BackendLastPushTime": "",
+		"BackendProjectID": "",
+		"BackendProjectName": "",
+		"BackendProjectConsoleUrl": "",
+		"BackendProjectCreationTime": "",
+		"BackendProjectLastUpdatedTime": "",
+		"Framework": "react"
+	},
+	"projectConfig": {
+		"SourceDir": "src",
+		"DistributionDir": "build",
+		"BuildCommand": "npm run-script build",
+		"StartCommand": "npm run-script start"
+	},
+	"backendProject": {
+		"features": {
+			"content-delivery": {
+				"attributes": {
+					"enabled": true,
+					"visibility": "public-global"
+				},
+				"components": {
+					"release": {
+						"backend-class": "Bucket"
+					}
+				},
+				"backend-class": "ContentDelivery"
+			},
+			"mobile-analytics": {
+				"components": {
+					"analytics": {
+						"backend-class": "PinpointAnalytics"
+					}
+				},
+				"backend-class": "Pinpoint"
+			},
+			"sign-in": {
+				"backend-class": "SignIn"
+			}
+		},
+		"name": "bubble-2019-01-02-21-09-19",
+		"region": "us-east-1",
+		"backend-class": "Project"
+	},
+	"packageJson": {
+		"name": "bubble",
+		"version": "0.1.0",
+		"private": true,
+		"dependencies": {
+			"aws-amplify": "^1.1.18",
+			"aws-amplify-react": "^2.2.5",
+			"react": "^16.6.3",
+			"react-dom": "^16.6.3",
+			"react-scripts": "2.1.1"
+		},
+		"scripts": {
+			"start": "react-scripts start",
+			"build": "react-scripts build",
+			"test": "react-scripts test",
+			"eject": "react-scripts eject"
+		},
+		"eslintConfig": {
+			"extends": "react-app"
+		},
+		"browserslist": [
+			">0.2%",
+			"not dead",
+			"not ie <= 11",
+			"not op_mini all"
+		]
+	},
+	"framework": "react",
+	"initialStage": "backend-valid",
+	"strategy": "import"
+}
