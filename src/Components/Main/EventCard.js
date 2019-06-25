@@ -8,43 +8,50 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
+import ListItem from '@material-ui/core/ListItem';
+import acf from './acf.jpg'
+import prayer from './prayerline.jpeg'
+import youth from './youthday.jpeg'
+
+
 
 const styles = {
   card: {
-    maxWidth: 345,
+    maxWidth: 645,
+    width: '145vw',
+    height: 'auto'
   },
   media: {
-    height: 40,
+    paddingTop: 120,
+    height: 320,
+    width: 'auto'
   },
 };
 
 function EventCard(props) {
   const { classes } = props;
+  const images = [acf,prayer,youth]
   return (
-    <Card className={classes.card}>
-      <CardActionArea>
-        <CardContent>
-          <Grid container spacing={24}>
-            <Grid item xs={12}>
-                Left Side
-            </Grid>
-            <Grid item xs={12}>
-                Right Side
-            </Grid>
-          </Grid>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
-    </Card>
+    <ListItem key={props.value} button>
+      <Card className={classes.card}>
+        <CardActionArea>
+          <CardMedia image={images[0]} className={classes.media} title="Image"/>
+          <CardContent>
+          <Typography variant="h6" component="h2">
+            This is event { props.value }
+          </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          <Button size="small" color="primary">
+            Share
+          </Button>
+          <Button size="small" color="primary">
+            Learn More
+          </Button>
+        </CardActions>
+      </Card>
+    </ListItem>
   );
 }
 

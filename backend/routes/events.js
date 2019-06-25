@@ -4,7 +4,7 @@ let Event = require('../models/event.model');
  * Lists all of the events currently in the database
  */
 router.route('/').get((req, res) => {
-  console.log("It's hitting the breakpoint")
+  // console.log("It's hitting the breakpoint")
   Event.find()
     .then(events => res.json(events))
     .catch(err => res.status(400).json('Error: ' + err));
