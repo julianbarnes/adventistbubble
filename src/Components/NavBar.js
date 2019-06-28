@@ -2,20 +2,26 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import Icon from '@material-ui/core/Icon';
-import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
 import AddIcon from '@material-ui/icons/Add';
+import HomeIcon from '@material-ui/icons/Home';
 
 
 const useStyles = makeStyles({
   root: {
     width: '100%',
   },
+  appBar: {
+    top: 'auto',
+    bottom: 0,
+    position: 'fixed',
+    width: '100%',
+    marginTop: 50
+
+  }
 });
 
 export default function NavBar() {
+  
   const classes = useStyles();
   const [value, setValue] = React.useState('recents');
 
@@ -23,11 +29,21 @@ export default function NavBar() {
     setValue(newValue);
   }
 
+  function goToAdd(e) {
+    window.location = '/add'
+  }
+  
+  function goToHome(e) {
+    window.location = '/'
+  }
+
+  
   return (
-    <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
-      <BottomNavigationAction label="Recents" value="recents" icon={<RestoreIcon />} />
-      <BottomNavigationAction label="Favorites" value="favorites" icon={<FavoriteIcon />} />
-      <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} />
+    <BottomNavigation position='fixed' value={value} onChange={handleChange} className={classes.appBar}>
+      <BottomNavigationAction label="Home" value="home" icon={<HomeIcon />}></BottomNavigationAction>
+      <BottomNavigationAction label="Add" value="add" icon={<AddIcon />}></BottomNavigationAction>
     </BottomNavigation>
   );
+  
+  
 }

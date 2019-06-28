@@ -7,6 +7,7 @@ import TitleBar from './Components/Main/TitleBar';
 import CreateEvent from './Components/CreateEvent';
 import NavBar from './Components/NavBar';
 
+
 class App extends Component {
   render() {
     return (
@@ -16,7 +17,7 @@ class App extends Component {
             <Route path="/" exact component={Main} />
             <Route path="/add" exact component={CreateEvent} />
         </Router>
-        <NavBar></NavBar>
+        <NavBar position="fixed" ></NavBar>
       </div>
       
     );

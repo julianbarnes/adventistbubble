@@ -4,6 +4,10 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import MenuIcon from '@material-ui/icons/Menu';
+import sdalogo from './sdalogo.png'
+import CardMedia from '@material-ui/core/CardMedia';
+
+
 
 const styles = {
   root: {
@@ -16,6 +20,11 @@ const styles = {
     marginLeft: -12,
     marginRight: 0,
   },
+  img: {
+    width: 50,
+    height: 50,
+    marginRight: '60%'
+  }
 };
 
 function TitleBar(props) {
@@ -24,9 +33,9 @@ function TitleBar(props) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>    
-          <Typography variant="h6" color="inherit" className={classes.grow}>
-            Adventist Bubble
-          </Typography>
+        <Typography>Bubble</Typography>
+          <img src={sdalogo} className={classes.img}></img>
+          
           <MenuIcon />
         </Toolbar>
       </AppBar>

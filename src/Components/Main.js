@@ -52,9 +52,9 @@ class Main extends React.Component {
             <Paper elevation={1} style={{width: "100%", margin:'auto'}}>
                 <List dense className={classes.root} style={{margin: "auto", width:"100%"}}>
                     {this.eventList()}
-
                 </List>
             </Paper>
+            
         </div>
         );
     }
