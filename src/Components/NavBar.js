@@ -40,8 +40,8 @@ export default function NavBar() {
   
   return (
     <BottomNavigation position='fixed' value={value} onChange={handleChange} className={classes.appBar}>
-      <BottomNavigationAction label="Home" value="home" icon={<HomeIcon />}></BottomNavigationAction>
-      <BottomNavigationAction label="Add" value="add" icon={<AddIcon />}></BottomNavigationAction>
+      <BottomNavigationAction label="Home" value="home" icon={<HomeIcon />} onClick ={()=> goToHome()}></BottomNavigationAction>
+      <BottomNavigationAction label="Add" value="add" icon={<AddIcon />} onClick={()=> goToAdd()}></BottomNavigationAction>
     </BottomNavigation>
   );
   

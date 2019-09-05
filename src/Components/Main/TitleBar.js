@@ -4,7 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import MenuIcon from '@material-ui/icons/Menu';
-import sdalogo from './sdalogo.png'
+import sdalogo from './sdalogo.png';
 import CardMedia from '@material-ui/core/CardMedia';
 
 
@@ -17,8 +17,7 @@ const styles = {
     flexGrow: 1,
   },
   menuButton: {
-    marginLeft: -12,
-    marginRight: 0,
+    float: 'right'
   },
   img: {
     width: 50,
@@ -36,7 +35,7 @@ function TitleBar(props) {
         <Typography>Bubble</Typography>
           <img src={sdalogo} className={classes.img}></img>
           
-          <MenuIcon />
+          <MenuIcon className={classes.menuButton}/>
         </Toolbar>
       </AppBar>
     </div>
