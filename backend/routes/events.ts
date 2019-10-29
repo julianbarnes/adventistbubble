@@ -1,5 +1,10 @@
-const router = require('express').Router();
-let Event = require('../models/event.model');
+import * as fs from 'fs'
+import * as express from 'express';
+import * as path from 'path'
+const router = express.Router();
+import { Event } from '../models/event.model'
+import DB from '../DB'
+
 /**
  * Lists all of the events currently in the database
  */
@@ -9,6 +14,37 @@ router.route('/').get((req, res) => {
     .then(events => res.json(events))
     .catch(err => res.status(400).json('Error: ' + err));
 });
+
+router.route('/active').get((req, res) => {
+  Event.find({'active': 'true'}, 'title description').then(events => {
+    return res.json(events)
+  })
+})
+/**
+ * @function upload
+ * uploads a picture
+ */
+router.route('/upload').post((req, res) => {
+  console.log("upload")
+  //AWS bucket operation
+  let filename = path.resolve(__dirname, "../acf.jpg")
+  
+  fs.readFile(filename, (err,data) => {
+    if (err) throw err;
+
+    //let uploadData = new Buffer('binary', data);
+    const params = {
+      Bucket: 'adventist-bubble',
+      Key: 'acf.jpg',
+      Body: JSON.stringify(data, null, 2)
+    };
+    DB.s3.upload(params, function(s3Err, data) {
+      if (s3Err) throw s3Err
+      console.log('File uploaded succesfully at ${data.Location')
+    })
+
+  })
+})
 /**
  * Adds an event
  * Inputs: Title, description, and date
@@ -41,7 +77,8 @@ router.route('/:id').delete((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/update/:id').post((req, res) => {
+router.route('/:id').post((req, res) => {
+  console.log("id")
   Event.findById(req.params.id)
     .then(event => {
       event.username = req.body.username;
@@ -55,4 +92,6 @@ router.route('/update/:id').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-module.exports = router;
+
+
+export const eventsRouter = router;

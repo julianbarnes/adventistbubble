@@ -28,7 +28,7 @@ class Main extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8000/events')
+        axios.get('http://localhost:8000/events/active')
             .then(res => {
                 this.setState({events: res.data})
             })

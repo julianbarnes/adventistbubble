@@ -35,7 +35,7 @@ function EventCard(props) {
     <ListItem key={props.value} button>
       <Card className={classes.card}>
         <CardActionArea>
-          <CardMedia image={images[0]} className={classes.media} title="Image"/>
+          <CardMedia src="https://adventist-bubble.s3.amazonaws.com/acf.jpg" className={classes.media} title="Image"/>
           <CardContent>
           <Typography variant="h6" component="h2">
             This is event { props.value }
