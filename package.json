@@ -8,7 +8,7 @@
     "@material-ui/styles": "^4.1.1",
     "aws-amplify": "^1.1.18",
     "aws-amplify-react": "^2.2.5",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.3.1",
     "react": "next",
     "react-datepicker": "^2.7.0",
